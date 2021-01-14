@@ -20,12 +20,17 @@ export class ButtonBlockComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      var displayButtons = this.configService.getButtonBlock('default')
-      console.log(displayButtons)
-      this.showCancel = displayButtons?.find(x=>x.name.toLowerCase()==="cancel")?.show=='true'?true:false;
-      this.showSignUp= displayButtons?.find(x=>x.name.toLowerCase()==="signup")?.show=='true'?true:false;
-      this.showLogin= displayButtons?.find(x=>x.name.toLowerCase()==="login")?.show=='true'?true:false;
-      this.showOk= displayButtons?.find(x=>x.name.toLowerCase()==="ok")?.show=='true'?true:false;
+    this.displayButtonsforPage();
+  }
+
+  private displayButtonsforPage()
+  {
+    var displayButtons = this.configService.getButtonBlock('default')
+    console.log(displayButtons)
+    this.showCancel = displayButtons?.find(x=>x.name.toLowerCase()==="cancel")?.show=='true'?true:false;
+    this.showSignUp= displayButtons?.find(x=>x.name.toLowerCase()==="signup")?.show=='true'?true:false;
+    this.showLogin= displayButtons?.find(x=>x.name.toLowerCase()==="login")?.show=='true'?true:false;
+    this.showOk= displayButtons?.find(x=>x.name.toLowerCase()==="ok")?.show=='true'?true:false;
   }
 
 }
