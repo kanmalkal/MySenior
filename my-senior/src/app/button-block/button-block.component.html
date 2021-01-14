@@ -3,16 +3,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2"></div>    
-            <div class="col-md-2">
+            <div class="col-md-2" *ngIf="showOk">
                 <button mat-button>OK</button>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2" *ngIf="showCancel">
                 <button mat-button>Cancel</button>
             </div>
-            <div class="col-md-2">
-                <button mat-button>Sign-Up</button>
+            <div class="col-md-2" *ngIf="showSignUp">
+                <button mat-button >Sign-Up</button>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2" *ngIf="showLogin">
                 <button mat-button>Log-in</button>
             </div>
             <div class="col-md-2"></div>    

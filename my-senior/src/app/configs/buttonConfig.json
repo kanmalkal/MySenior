@@ -1,0 +1,33 @@
+{
+   "flows" : [
+        {
+            "flow" : "default",
+            "buttons" :[
+                {
+                    "name" : "OK",
+                    "show" : "false",
+                    "Service" : "",
+                    "Operation" : ""
+                },
+                {
+                    "name" : "Cancel",
+                    "show" : "false",
+                    "Service" : "",
+                    "Operation" : ""
+                },
+                {
+                    "name" : "SignUp",
+                    "show" : "true",
+                    "Service" : "User",
+                    "Operation" : "SignUp"
+                },
+                {
+                    "name" : "LogIn",
+                    "show" : "true",
+                    "Service" : "User",
+                    "Operation" : "LogIn"
+                }
+            ]
+        }
+    ]
+}
