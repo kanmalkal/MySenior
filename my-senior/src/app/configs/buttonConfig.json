@@ -5,7 +5,7 @@
             "buttons" :[
                 {
                     "name" : "OK",
-                    "show" : "false",
+                    "show" : "true",
                     "Service" : "",
                     "Operation" : ""
                 },

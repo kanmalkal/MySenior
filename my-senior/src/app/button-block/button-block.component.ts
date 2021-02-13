@@ -13,6 +13,7 @@ export class ButtonBlockComponent implements OnInit {
   public showSignUp: boolean=false;
   public showLogin: boolean=false;
   public showOk: boolean=false;
+  buttonConfigName:string='default';
 
   configService: ConfigService;
   constructor(configService : ConfigService) { 
@@ -25,12 +26,15 @@ export class ButtonBlockComponent implements OnInit {
 
   private displayButtonsforPage()
   {
-    var displayButtons = this.configService.getButtonBlock('default')
-    console.log(displayButtons)
-    this.showCancel = displayButtons?.find(x=>x.name.toLowerCase()==="cancel")?.show=='true'?true:false;
-    this.showSignUp= displayButtons?.find(x=>x.name.toLowerCase()==="signup")?.show=='true'?true:false;
-    this.showLogin= displayButtons?.find(x=>x.name.toLowerCase()==="login")?.show=='true'?true:false;
-    this.showOk= displayButtons?.find(x=>x.name.toLowerCase()==="ok")?.show=='true'?true:false;
+    var displayButtons = this.configService.getButtonBlock(this.buttonConfigName)
+    this.showCancel = displayButtons?.find(x=>x.name.toLowerCase()==="cancel")?.show.toLowerCase()=='true'?true:false;
+    this.showSignUp= displayButtons?.find(x=>x.name.toLowerCase()==="signup")?.show.toLowerCase()=='true'?true:false;
+    this.showLogin= displayButtons?.find(x=>x.name.toLowerCase()==="login")?.show.toLowerCase()=='true'?true:false;
+    this.showOk= displayButtons?.find(x=>x.name.toLowerCase()==="ok")?.show.toLowerCase()=='true'?true:false;
   }
-
+  // functions to handle the key clicks
+  buttonClicked(event: any){
+    console.log("button clicked", event)
+    console.log(event._elementRef.nativeElement.id)
+  }
 }

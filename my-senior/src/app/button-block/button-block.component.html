@@ -4,16 +4,16 @@
         <div class="row">
             <div class="col-md-2"></div>    
             <div class="col-md-2" *ngIf="showOk">
-                <button mat-button>OK</button>
+                <button mat-button #okbutton id="okbutton" (click)="buttonClicked(okbutton)">OK</button>
             </div>
             <div class="col-md-2" *ngIf="showCancel">
-                <button mat-button>Cancel</button>
+                <button mat-button  #cancelbutton id="cancelbutton"  (click)="buttonClicked(cancelbutton)" >Cancel</button>
             </div>
             <div class="col-md-2" *ngIf="showSignUp">
-                <button mat-button >Sign-Up</button>
+                <button mat-button #signupbutton id="signupbutton"  (click)="buttonClicked(signupbutton)" >Sign-Up</button>
             </div>
-            <div class="col-md-2" *ngIf="showLogin">
-                <button mat-button>Log-in</button>
+            <div class="col-md-2"  *ngIf="showLogin">
+                <button mat-button #loginbutton id="loginbutton"  (click)="buttonClicked(loginbutton)">Log-in</button>
             </div>
             <div class="col-md-2"></div>    
         </div>
